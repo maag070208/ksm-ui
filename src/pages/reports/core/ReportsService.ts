@@ -1,4 +1,4 @@
-const products = [
+let products = [
     {
       id: "1001",
       code: "l340dk2r8",
@@ -107,7 +107,7 @@ const products = [
       quantity: 18,
       inventoryStatus: "INSTOCK",
       rating: 4.7,
-    },
+    }, 
     {
       id: "1010",
       code: "p765jr8u4",
@@ -140,4 +140,14 @@ export const getProducts = () => {
 
 export const getProductById = (id: string)=> {
     return products.filter((product)=> product.id===id);
+}
+
+export const getProductsPromise = async () => {
+   return new Promise<any>((resolve, reject) => {
+    setTimeout(()=>{resolve(products)},2000)    
+    })
+}
+
+export const deleteProductById = (id: string)=> {
+  return products.filter((product) => product.id!==id);
 }

@@ -21,7 +21,7 @@ const LoginFormComponent = () => {
   const navigate = useNavigate();
 
   return (
-    <Card >
+    <Card className="border-blue-50 shadow-1">
       <h1 className="text-center">Sign Up</h1>
       <Formik
         validationSchema={validationSchema}
@@ -44,8 +44,8 @@ const LoginFormComponent = () => {
         {({ values, handleChange }) => (
           <Form className="flex flex-column w-30rem h-30rem justify-content-between">
             <div className="flex flex-column">
-            <label htmlFor="user">User</label>
-            <InputText className="mb-3" value={values.user} onChange={handleChange("user")} />
+            <label className="mb-2" htmlFor="user">User</label>
+            <InputText className="mb-5" value={values.user} onChange={handleChange("user")} />
 
             <label htmlFor="password">Password</label>
             <InputText
