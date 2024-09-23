@@ -4,17 +4,18 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "primereact/button";
 import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
-import { deleteProductById, getProductsPromise } from "../core/ReportsService";
+import { deleteProductById, getProductsPromise, Product } from "../core/ReportsService";
 import { useEffect, useState } from "react";
 
 const ReportsPage = () => {
   const navigate = useNavigate();
   // const products = getProducts();
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   const handleDelete = (id: string) => {
     deleteProductById(id);
-    setProducts((prevProducts) => prevProducts.filter((product) => product.id!== id));
+    setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
   };
 
   useEffect(() => {

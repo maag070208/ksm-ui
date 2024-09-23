@@ -1,4 +1,17 @@
-let products = [
+export interface Product {
+  id: string;
+  code: string;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  category: string;
+  quantity: number;
+  inventoryStatus: string;
+  rating: number;
+}
+
+let products: Product[] = [
     {
       id: "1001",
       code: "l340dk2r8",
@@ -134,6 +147,7 @@ let products = [
     },
   ];
 
+
 export const getProducts = (products: string) => {
     return products;
   }
@@ -148,6 +162,6 @@ export const getProductsPromise = async () => {
     })
 }
 
-export const deleteProductById = (id: string)=> {
-  return products.filter((product) => product.id!==id);
-}
+export const deleteProductById = (id: string) => {
+  products = products.filter((product) => product.id !== id); // Update the products array
+};
