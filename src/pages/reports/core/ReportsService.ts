@@ -134,7 +134,7 @@ let products = [
     },
   ];
 
-export const getProducts = () => {
+export const getProducts = (products: string) => {
     return products;
   }
 
