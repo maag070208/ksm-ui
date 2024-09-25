@@ -163,7 +163,7 @@ export const getProductsPromise = async () => {
 }
 
 export const deleteProductById = (id: string) => {
-  products = products.filter((product) => product.id !== id); // Update the products array
+  products = products.filter((product) => product.id !== id);
 };
 
 export const updateProduct = (product: Product) => {
