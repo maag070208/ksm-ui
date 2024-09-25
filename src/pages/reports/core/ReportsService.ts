@@ -158,10 +158,18 @@ export const getProductById = (id: string)=> {
 
 export const getProductsPromise = async () => {
    return new Promise<any>((resolve, reject) => {
-    setTimeout(()=>{resolve(products)},2000)    
+    setTimeout(()=>{resolve(products)},100)    
     })
 }
 
 export const deleteProductById = (id: string) => {
-  products = products.filter((product) => product.id !== id); // Update the products array
+  products = products.filter((product) => product.id !== id);
 };
+
+export const updateProduct = (product: Product) => {
+  const indiceElement = products.findIndex(element => element.id === product.id)
+  console.log(indiceElement)
+  console.log(products[indiceElement])
+
+  products[indiceElement] = product
+}
